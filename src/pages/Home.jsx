@@ -14,9 +14,9 @@ const stagger = { visible: { transition: { staggerChildren: 0.15 } } };
 
 export default function Home() {
   const services = [
-    { icon: <Heart size={32} />, title: 'Weddings', desc: 'From intimate ceremonies to grand celebrations, we bring your love story to life with elegance and precision.', img: heroImg },
-    { icon: <Sparkles size={32} />, title: 'Corporate Events', desc: 'Impactful brand activations, galas, and conferences designed to exceed every expectation.', img: corporateImg },
-    { icon: <PartyPopper size={32} />, title: 'Private Celebrations', desc: 'Milestone birthdays, anniversaries, and bespoke gatherings crafted with personal attention to detail.', img: privateImg },
+    { icon: <Heart size={32} />, title: 'Weddings', desc: 'From intimate ceremonies to grand celebrations, we bring your love story to life with elegance and precision.' },
+    { icon: <Sparkles size={32} />, title: 'Corporate Events', desc: 'Impactful brand activations, galas, and conferences designed to exceed every expectation.' },
+    { icon: <PartyPopper size={32} />, title: 'Private Celebrations', desc: 'Milestone birthdays, anniversaries, and bespoke gatherings crafted with personal attention to detail.' },
   ];
 
   const portfolio = [
@@ -80,16 +80,11 @@ export default function Home() {
           </motion.div>
           <motion.div className="services-grid" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
             {services.map((s, i) => (
-              <motion.div className="service-card" key={i} variants={fadeUp}>
-                <div className="service-card-img">
-                  <img src={s.img} alt={s.title} />
-                  <div className="service-card-overlay">
-                    <div className="service-icon">{s.icon}</div>
-                    <h3>{s.title}</h3>
-                    <p>{s.desc}</p>
-                    <Link to="/services" className="card-link">Learn More <ChevronRight size={16} /></Link>
-                  </div>
-                </div>
+              <motion.div className="service-card text-card" key={i} variants={fadeUp}>
+                <div className="service-icon-wrap">{s.icon}</div>
+                <h3>{s.title}</h3>
+                <p>{s.desc}</p>
+                <Link to="/services" className="card-link">Learn More <ChevronRight size={16} /></Link>
               </motion.div>
             ))}
           </motion.div>

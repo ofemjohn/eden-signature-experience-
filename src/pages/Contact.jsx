@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, MessageSquare } from 'lucide-react';
-import heroImg from '../assets/images/founder-portrait.png';
+import heroImg from '../assets/images/about-luxury-details.png';
 import './Contact.css';
 
 const InstagramIcon = ({ size = 24 }) => (

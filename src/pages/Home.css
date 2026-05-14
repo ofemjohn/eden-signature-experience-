@@ -164,62 +164,72 @@
   overflow: hidden;
 }
 
-.service-card-img {
-  position: relative;
-  aspect-ratio: 3/4;
-  overflow: hidden;
-}
-
-.service-card-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.6s ease;
-}
-
-.service-card:hover .service-card-img img {
-  transform: scale(1.05);
-}
-
-.service-card-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(26,26,26,0.9) 0%, transparent 50%);
+.service-card.text-card {
+  background: var(--color-white);
+  padding: 3rem 2.5rem;
+  border: 1px solid var(--color-secondary);
+  border-radius: 4px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  padding: 2rem;
-  color: #fff;
+  transition: all 0.4s ease;
+  height: 100%;
 }
 
-.service-icon {
+.service-card.text-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  border-color: var(--color-accent);
+}
+
+.service-icon-wrap {
   color: var(--color-accent);
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+  background: var(--color-bg);
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.4s ease;
 }
 
-.service-card-overlay h3 {
-  color: #fff;
+.service-card.text-card:hover .service-icon-wrap {
+  background: var(--color-accent);
+  color: var(--color-white);
+}
+
+.service-card.text-card h3 {
   font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-primary);
 }
 
-.service-card-overlay p {
-  color: rgba(255,255,255,0.8);
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
+.service-card.text-card p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  flex-grow: 1;
 }
 
 .card-link {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
   color: var(--color-accent);
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   font-size: 0.8rem;
+  font-weight: 500;
+  margin-top: auto;
+  transition: var(--transition);
 }
 
-.card-link:hover { color: #fff; }
+.card-link:hover {
+  color: var(--color-primary);
+  gap: 10px;
+}
 
 /* ===== Portfolio Grid ===== */
 .portfolio-grid {

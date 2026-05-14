@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import founderImg from '../assets/images/founder-portrait.png';
+import founderImg from '../assets/images/about-luxury-details.png';
 import heroImg from '../assets/images/hero-wedding.png';
 import './About.css';
 
