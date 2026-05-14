@@ -1,0 +1,147 @@
+.hero-sub-p { color: rgba(255,255,255,0.8); max-width: 600px; margin: 1rem auto 0; }
+
+/* Service Cards Full Grid */
+.services-full-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.service-full-card {
+  background: var(--color-white);
+  padding: 2.5rem;
+  border-radius: 4px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.service-full-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+
+.sfc-icon { color: var(--color-accent); margin-bottom: 1rem; }
+.service-full-card h3 { margin-bottom: 0.75rem; }
+.service-full-card > p { color: #555; font-size: 0.95rem; margin-bottom: 1.5rem; }
+
+.sfc-inclusions {
+  list-style: none;
+  margin-bottom: 2rem;
+  flex-grow: 1;
+}
+
+.sfc-inclusions li {
+  padding: 0.4rem 0;
+  font-size: 0.9rem;
+  color: #666;
+  border-bottom: 1px solid var(--color-secondary);
+  padding-left: 1rem;
+  position: relative;
+}
+
+.sfc-inclusions li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-size: 0.8rem;
+}
+
+.sfc-btn {
+  align-self: flex-start;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.8rem;
+}
+
+/* Process Vertical */
+.process-vertical {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.pv-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.pv-num {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--color-accent);
+  min-width: 40px;
+}
+
+.pv-content h4 { margin-bottom: 0.25rem; }
+.pv-content p { color: #666; font-size: 0.95rem; }
+
+/* Add-ons */
+.addons-section { background: var(--color-secondary); }
+
+.addons-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.addon-card {
+  text-align: center;
+  padding: 2rem;
+  background: var(--color-white);
+  border-radius: 4px;
+  transition: var(--transition);
+}
+
+.addon-card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.06); }
+.addon-icon { color: var(--color-accent); margin-bottom: 0.75rem; }
+
+/* FAQ */
+.faq-list { max-width: 700px; margin: 0 auto; }
+
+.faq-item {
+  border-bottom: 1px solid var(--color-secondary);
+}
+
+.faq-q {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 1.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-primary);
+  text-align: left;
+}
+
+.faq-chevron { transition: transform 0.3s ease; color: var(--color-accent); }
+.faq-item.open .faq-chevron { transform: rotate(180deg); }
+
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+.faq-item.open .faq-a {
+  max-height: 200px;
+  padding-bottom: 1.5rem;
+}
+
+.faq-a p { color: #666; font-size: 0.95rem; line-height: 1.8; }
+
+@media (max-width: 992px) {
+  .services-full-grid { grid-template-columns: 1fr 1fr; }
+  .addons-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .services-full-grid { grid-template-columns: 1fr; }
+}

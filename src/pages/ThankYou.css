@@ -1,0 +1,74 @@
+.ty-hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-align: center;
+}
+
+.ty-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ty-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(26,26,26,0.8);
+}
+
+.ty-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  max-width: 600px;
+  padding: 0 2rem;
+}
+
+.ty-content h1 {
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+
+.ty-text {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 3rem;
+  line-height: 1.8;
+}
+
+.ty-ctas {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.ty-ctas .btn {
+  border-color: #fff;
+  color: #fff;
+}
+
+.ty-ctas .btn:hover {
+  background: #fff;
+  color: var(--color-primary);
+}
+
+.ty-ctas .btn-primary {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.ty-ctas .btn-primary:hover {
+  background: var(--color-accent-dark);
+  border-color: var(--color-accent-dark);
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .ty-ctas { flex-direction: column; }
+}

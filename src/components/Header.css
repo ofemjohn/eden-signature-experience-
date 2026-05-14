@@ -1,0 +1,20 @@
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-primary);
+}
+
+@media (max-width: 768px) {
+  .mobile-toggle { display: block; z-index: 1001; }
+  .nav {
+    position: fixed; top: 0; right: -100%; width: 80%; height: 100vh;
+    background: var(--color-white); padding: 6rem 2rem 2rem;
+    transition: right 0.4s ease; z-index: 1000;
+    box-shadow: -5px 0 30px rgba(0,0,0,0.1);
+  }
+  .nav.open { right: 0; }
+  .nav-links { flex-direction: column; gap: 1.5rem; }
+  .nav-links a { font-size: 1.1rem; }
+}
