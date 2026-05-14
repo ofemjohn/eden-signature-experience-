@@ -2,11 +2,12 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ChevronRight, Heart, Sparkles, CalendarDays, PartyPopper } from 'lucide-react';
 import heroImg from '../assets/images/hero-wedding.png';
-import corporateImg from '../assets/images/corporate-event.png';
-import privateImg from '../assets/images/private-celebration.png';
 import destinationImg from '../assets/images/destination-wedding.png';
 import galaImg from '../assets/images/gala-dinner.png';
 import portfolioImg from '../assets/images/portfolio-wedding.png';
+import bgWedding from '../assets/images/service-art-weddings.png';
+import bgCorporate from '../assets/images/service-art-corporate.png';
+import bgPrivate from '../assets/images/service-art-private.png';
 import './Home.css';
 
 const fadeUp = { hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8 } } };
@@ -14,9 +15,9 @@ const stagger = { visible: { transition: { staggerChildren: 0.15 } } };
 
 export default function Home() {
   const services = [
-    { icon: <Heart size={32} />, title: 'Weddings', desc: 'From intimate ceremonies to grand celebrations, we bring your love story to life with elegance and precision.' },
-    { icon: <Sparkles size={32} />, title: 'Corporate Events', desc: 'Impactful brand activations, galas, and conferences designed to exceed every expectation.' },
-    { icon: <PartyPopper size={32} />, title: 'Private Celebrations', desc: 'Milestone birthdays, anniversaries, and bespoke gatherings crafted with personal attention to detail.' },
+    { icon: <Heart size={32} />, title: 'Weddings', desc: 'From intimate ceremonies to grand celebrations, we bring your love story to life with elegance and precision.', bg: bgWedding },
+    { icon: <Sparkles size={32} />, title: 'Corporate Events', desc: 'Impactful brand activations, galas, and conferences designed to exceed every expectation.', bg: bgCorporate },
+    { icon: <PartyPopper size={32} />, title: 'Private Celebrations', desc: 'Milestone birthdays, anniversaries, and bespoke gatherings crafted with personal attention to detail.', bg: bgPrivate },
   ];
 
   const portfolio = [
@@ -80,7 +81,8 @@ export default function Home() {
           </motion.div>
           <motion.div className="services-grid" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
             {services.map((s, i) => (
-              <motion.div className="service-card text-card" key={i} variants={fadeUp}>
+              <motion.div className="service-card text-card" key={i} variants={fadeUp} style={{ backgroundImage: `url(${s.bg})` }}>
+                <div className="card-glass-overlay"></div>
                 <div className="service-icon-wrap">{s.icon}</div>
                 <h3>{s.title}</h3>
                 <p>{s.desc}</p>
