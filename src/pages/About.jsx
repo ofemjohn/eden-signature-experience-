@@ -13,13 +13,13 @@ export default function About() {
     { title: 'Creativity', desc: 'We push boundaries to design events that are as unique as the people they celebrate.' },
   ];
 
-  const milestones = [
-    { year: '2018', text: 'Eden Signature Experience founded with a vision for luxury event planning' },
-    { year: '2019', text: 'Coordinated our first 100-guest destination wedding' },
-    { year: '2020', text: 'Pioneered virtual event coordination during the global pivot' },
-    { year: '2021', text: 'Expanded to full-service corporate event management' },
-    { year: '2023', text: 'Celebrated our 200th successful event milestone' },
-    { year: '2025', text: 'Launched the Eden Signature Concierge — our premium bespoke tier' },
+  const journey = [
+    { step: '01', title: 'Personalized Consultation', text: 'We begin by deeply understanding your vision, preferences, and the unique story you wish to tell.' },
+    { step: '02', title: 'Bespoke Design Concept', text: 'Our team crafts a comprehensive, one-of-a-kind aesthetic that perfectly aligns with your brand or personal style.' },
+    { step: '03', title: 'Meticulous Curation', text: 'We source the finest venues, premier vendors, and exclusive materials to bring the concept to life.' },
+    { step: '04', title: 'Precision Planning', text: 'Every logistical detail, timeline, and contingency is orchestrated with absolute precision.' },
+    { step: '05', title: 'Flawless Execution', text: 'On the day of your event, we seamlessly manage every moving part so you can be fully present.' },
+    { step: '06', title: 'The Eden Memory', text: 'We ensure the final wrap-up is just as elegant, leaving you with nothing but perfect memories.' },
   ];
 
   return (
@@ -69,16 +69,17 @@ export default function About() {
       <section className="timeline-section section">
         <div className="container">
           <motion.div className="section-title" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-            <p className="overline">Our Journey</p>
-            <h2>Milestones</h2>
+            <p className="overline">Our Approach</p>
+            <h2>The Eden Standard</h2>
           </motion.div>
           <div className="timeline">
-            {milestones.map((m, i) => (
+            {journey.map((j, i) => (
               <motion.div className={`timeline-item ${i % 2 === 0 ? 'left' : 'right'}`} key={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
                 <div className="timeline-dot" />
                 <div className="timeline-content">
-                  <span className="timeline-year">{m.year}</span>
-                  <p>{m.text}</p>
+                  <span className="timeline-year">Phase {j.step}</span>
+                  <h4 style={{marginBottom: '0.5rem', color: 'var(--color-primary)', fontSize: '1.2rem'}}>{j.title}</h4>
+                  <p>{j.text}</p>
                 </div>
               </motion.div>
             ))}

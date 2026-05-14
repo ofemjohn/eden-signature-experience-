@@ -165,61 +165,91 @@
 }
 
 .service-card.text-card {
-  background: var(--color-white);
-  padding: 3rem 2.5rem;
-  border: 1px solid var(--color-secondary);
-  border-radius: 4px;
+  background: linear-gradient(145deg, #1c1c1c 0%, #0a0a0a 100%);
+  padding: 3.5rem 2.5rem;
+  border: 1px solid rgba(212, 175, 55, 0.15); /* Subtle gold border */
+  border-radius: 6px;
   display: flex;
   flex-direction: column;
-  transition: all 0.4s ease;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   height: 100%;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Abstract Gold Glow Graphic Background */
+.service-card.text-card::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; left: 0; bottom: 0;
+  background: radial-gradient(circle at top right, rgba(212, 175, 55, 0.08) 0%, transparent 60%),
+              radial-gradient(circle at bottom left, rgba(212, 175, 55, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+  transition: all 0.5s ease;
+  z-index: 1;
+}
+
+.service-card.text-card > * {
+  position: relative;
+  z-index: 2;
 }
 
 .service-card.text-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-  border-color: var(--color-accent);
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  border-color: rgba(212, 175, 55, 0.5);
+}
+
+.service-card.text-card:hover::before {
+  background: radial-gradient(circle at top right, rgba(212, 175, 55, 0.15) 0%, transparent 70%),
+              radial-gradient(circle at bottom left, rgba(212, 175, 55, 0.05) 0%, transparent 60%);
 }
 
 .service-icon-wrap {
   color: var(--color-accent);
-  margin-bottom: 1.5rem;
-  background: var(--color-bg);
-  width: 60px;
-  height: 60px;
+  margin-bottom: 2rem;
+  background: rgba(212, 175, 55, 0.05);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  width: 70px;
+  height: 70px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  transition: all 0.4s ease;
+  transition: all 0.5s ease;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.05);
 }
 
 .service-card.text-card:hover .service-icon-wrap {
   background: var(--color-accent);
-  color: var(--color-white);
+  color: var(--color-primary); /* Dark icon on gold background */
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+  transform: scale(1.1);
 }
 
 .service-card.text-card h3 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   margin-bottom: 1rem;
-  color: var(--color-primary);
+  color: var(--color-white);
+  letter-spacing: 0.5px;
 }
 
 .service-card.text-card p {
-  color: #666;
+  color: rgba(255, 255, 255, 0.65);
   font-size: 0.95rem;
-  line-height: 1.6;
-  margin-bottom: 2rem;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
   flex-grow: 1;
 }
 
 .card-link {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   color: var(--color-accent);
   text-transform: uppercase;
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
   font-size: 0.8rem;
   font-weight: 500;
   margin-top: auto;
@@ -227,8 +257,8 @@
 }
 
 .card-link:hover {
-  color: var(--color-primary);
-  gap: 10px;
+  color: var(--color-white);
+  gap: 12px;
 }
 
 /* ===== Portfolio Grid ===== */
