@@ -27,7 +27,7 @@ export default function Header() {
         <Link to="/" className="logo-link">
           <img src="/logo.png" alt="Eden Signature Experience" className="logo-img" />
         </Link>
-        <button className="mobile-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle navigation">
+        <button className={`mobile-toggle ${menuOpen ? 'is-open' : ''}`} onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle navigation">
           {menuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
         <nav className={`nav ${menuOpen ? 'open' : ''}`}>

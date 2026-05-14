@@ -8,13 +8,34 @@
 
 @media (max-width: 768px) {
   .mobile-toggle { display: block; z-index: 1001; }
+  
+  /* Force the toggle to be dark when the menu is open, since it sits over the white menu background */
+  .header:not(.scrolled) .mobile-toggle.is-open { color: var(--color-primary) !important; }
+
   .nav {
     position: fixed; top: 0; right: -100%; width: 80%; height: 100vh;
     background: var(--color-white); padding: 6rem 2rem 2rem;
-    transition: right 0.4s ease; z-index: 1000;
+    transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1); z-index: 1000;
     box-shadow: -5px 0 30px rgba(0,0,0,0.1);
   }
   .nav.open { right: 0; }
-  .nav-links { flex-direction: column; gap: 1.5rem; }
-  .nav-links a { font-size: 1.1rem; }
+  
+  .nav-links { flex-direction: column; gap: 2rem; align-items: flex-start; }
+  .nav-links a:not(.nav-cta-btn) { font-size: 1.1rem; }
+
+  /* Overriding index.css white text when header isn't scrolled, because nav is white on mobile */
+  .header:not(.scrolled) .nav.open .nav-links a:not(.nav-cta-btn) {
+    color: var(--color-primary);
+  }
+  
+  /* Ensure the CTA button is correctly styled and aligned in the mobile column layout */
+  .header:not(.scrolled) .nav.open .nav-cta-btn {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+
+  .header:not(.scrolled) .nav.open .nav-cta-btn:hover {
+    background: var(--color-primary);
+    color: var(--color-white) !important;
+  }
 }
