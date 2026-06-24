@@ -4,7 +4,7 @@ import { ChevronRight, Heart, Sparkles, CalendarDays, PartyPopper } from 'lucide
 import heroImg from '../assets/images/hero-wedding.png';
 import destinationImg from '../assets/images/destination-wedding.png';
 import galaImg from '../assets/images/gala-dinner.png';
-import portfolioImg from '../assets/images/portfolio-wedding.png';
+import portfolioImg from '../assets/images/diverse-wedding-couple.png';
 import bgWedding from '../assets/images/service-art-weddings.png';
 import bgCorporate from '../assets/images/service-art-corporate.png';
 import bgPrivate from '../assets/images/service-art-private.png';
@@ -20,11 +20,11 @@ export default function Home() {
     { icon: <PartyPopper size={32} />, title: 'Private Celebrations', desc: 'Milestone birthdays, anniversaries, and bespoke gatherings crafted with personal attention to detail.', bg: bgPrivate },
   ];
 
-  const portfolio = [
-    { img: heroImg, name: 'The Anderson Wedding', location: 'Garden Estate, Atlanta' },
-    { img: galaImg, name: 'Annual Charity Gala', location: 'The Grand Ballroom, New York' },
-    { img: destinationImg, name: 'Destination Ceremony', location: 'Turquoise Bay, Bahamas' },
-    { img: portfolioImg, name: 'The Johnson Reception', location: 'Heritage Hall, Chicago' },
+  const aestheticShowcase = [
+    { img: portfolioImg, title: 'Timeless Settings', subtitle: 'Atmospheric Spaces' },
+    { img: galaImg, title: 'Tablescapes', subtitle: 'Artful Dinner Details' },
+    { img: destinationImg, title: 'Scenic Backdrops', subtitle: 'Exquisite Locations' },
+    { img: heroImg, title: 'Bespoke Curation', subtitle: 'Tailored Concepts' },
   ];
 
   const steps = [
@@ -51,7 +51,7 @@ export default function Home() {
         </video>
         <motion.div className="hero-content" initial="hidden" animate="visible" variants={stagger}>
           <motion.p className="hero-label" variants={fadeUp}>Full-Service Event Management</motion.p>
-          <motion.h1 variants={fadeUp}>Where Every Moment<br />Becomes a Memory</motion.h1>
+          <motion.h1 variants={fadeUp}>Curating Unforgettable<br />Experiences</motion.h1>
           <motion.p className="hero-sub" variants={fadeUp}>Crafting extraordinary, once-in-a-lifetime experiences with elegance, precision, and heart.</motion.p>
           <motion.div className="hero-ctas" variants={fadeUp}>
             <Link to="/portfolio" className="btn btn-primary">Explore Our Work</Link>
@@ -67,7 +67,7 @@ export default function Home() {
       <motion.section className="intro-strip section" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-100px' }} variants={fadeUp}>
         <div className="container intro-strip-inner">
           <div className="intro-accent-line" />
-          <p className="intro-statement">At Eden Signature Experience, we believe that every celebration deserves to be extraordinary. We combine artistry with meticulous planning to create events that are as unique as the people they honour.</p>
+          <p className="intro-statement">At Eden Signature Experience, we believe that every celebration deserves to be extraordinary. We combine artistry with meticulous planning to create events that are as unique as the people they honor.</p>
           <blockquote className="intro-quote">"They didn't just plan our event — they understood our story."<cite>— Past Client</cite></blockquote>
         </div>
       </motion.section>
@@ -93,26 +93,26 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Portfolio */}
+      {/* Featured Portfolio / The Eden Aesthetic */}
       <section className="featured-portfolio section">
         <div className="container">
           <motion.div className="section-title" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-            <p className="overline">Our Work</p>
-            <h2>Featured Events</h2>
+            <p className="overline">Design Vision</p>
+            <h2>The Eden Aesthetic</h2>
           </motion.div>
           <motion.div className="portfolio-grid" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
-            {portfolio.map((p, i) => (
+            {aestheticShowcase.map((p, i) => (
               <motion.div className={`portfolio-item ${i === 0 ? 'large' : ''}`} key={i} variants={fadeUp}>
-                <img src={p.img} alt={p.name} />
+                <img src={p.img} alt={p.title} />
                 <div className="portfolio-overlay">
-                  <h4>{p.name}</h4>
-                  <p>{p.location}</p>
+                  <h4>{p.title}</h4>
+                  <p>{p.subtitle}</p>
                 </div>
               </motion.div>
             ))}
           </motion.div>
           <div className="center-cta">
-            <Link to="/portfolio" className="btn">View Full Portfolio</Link>
+            <Link to="/portfolio" className="btn">Explore Design Vision</Link>
           </div>
         </div>
       </section>

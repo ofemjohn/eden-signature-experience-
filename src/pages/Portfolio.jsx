@@ -1,82 +1,83 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Search } from 'lucide-react';
-import heroImg from '../assets/images/hero-wedding.png';
-import corporateImg from '../assets/images/corporate-event.png';
-import privateImg from '../assets/images/private-celebration.png';
-import destinationImg from '../assets/images/destination-wedding.png';
-import galaImg from '../assets/images/gala-dinner.png';
-import portfolioImg from '../assets/images/portfolio-wedding.png';
+import { Link } from 'react-router-dom';
 import detailsImg from '../assets/images/wedding-details.png';
+import luxuryDecorImg from '../assets/images/luxury-table-decor.png';
+import blackCoupleImg from '../assets/images/black-wedding-couple.png';
+import luxuryFloralsImg from '../assets/images/luxury-florals.png';
+import luxuryStationeryImg from '../assets/images/luxury-stationery.png';
+import portfolioImg from '../assets/images/diverse-wedding-couple.png';
 import './Portfolio.css';
 
 const fadeUp = { hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8 } } };
 const stagger = { visible: { transition: { staggerChildren: 0.1 } } };
 
 export default function Portfolio() {
-  const [filter, setFilter] = useState('All');
   const [selectedImg, setSelectedImg] = useState(null);
 
-  const categories = ['All', 'Wedding', 'Corporate', 'Private', 'Destination'];
-
-  const projects = [
-    { id: 1, img: heroImg, title: 'The Anderson Wedding', location: 'Garden Estate, Atlanta', category: 'Wedding', year: '2025' },
-    { id: 2, img: corporateImg, title: 'Tech Innovators Gala', location: 'Grand Ballroom, NYC', category: 'Corporate', year: '2024' },
-    { id: 3, img: privateImg, title: 'Isabella\'s 30th Birthday', location: 'Villa Toscana, Malibu', category: 'Private', year: '2025' },
-    { id: 4, img: destinationImg, title: 'Sunset Cove Ceremony', location: 'Turquoise Bay, Bahamas', category: 'Destination', year: '2024' },
-    { id: 5, img: galaImg, title: 'Annual Charity Dinner', location: 'The Plaza, London', category: 'Corporate', year: '2023' },
-    { id: 6, img: portfolioImg, title: 'The Johnson Reception', location: 'Heritage Hall, Chicago', category: 'Wedding', year: '2024' },
-    { id: 7, img: detailsImg, title: 'Bespoke Details', location: 'Sonoma Valley, CA', category: 'Wedding', year: '2024' },
+  const inspirations = [
+    { id: 1, img: detailsImg, title: 'Bespoke Details', desc: 'Crafting unique tactile details that reflect personal narratives.' },
+    { id: 2, img: luxuryDecorImg, title: 'Tablescapes & Curation', desc: 'Artful dinner pairings, customized linens, and lighting alignment.' },
+    { id: 3, img: blackCoupleImg, title: 'Scenic Environments', desc: 'Sourcing venues that provide breathtaking backdrops worldwide.' },
+    { id: 4, img: luxuryFloralsImg, title: 'Exquisite Florals', desc: 'Elegant botanicals selected for scent, texture, and visual impact.' },
+    { id: 5, img: luxuryStationeryImg, title: 'Couture Stationery', desc: 'Custom calligraphy, gold-foil lettering, and hand-pressed wax seals that set the tone.' },
+    { id: 6, img: portfolioImg, title: 'Timeless Settings', desc: 'Designing atmospheric spaces where lasting memories are formed.' }
   ];
-
-  const filteredProjects = filter === 'All' ? projects : projects.filter(p => p.category === filter);
 
   return (
     <div className="portfolio-page">
       <section className="page-hero">
-        <img src={portfolioImg} alt="Our Portfolio" className="page-hero-bg" />
+        <img src={luxuryStationeryImg} alt="Our Design Philosophy" className="page-hero-bg" />
         <div className="page-hero-overlay" />
         <motion.div className="page-hero-content" initial="hidden" animate="visible" variants={fadeUp}>
-          <p className="overline">Our Work</p>
+          <p className="overline">Gallery</p>
           <h1>Portfolio</h1>
-          <p className="hero-sub-p">A curated selection of our most memorable events, showcasing our commitment to elegance, creativity, and flawless execution.</p>
+          <p className="hero-sub-p">Every extraordinary celebration begins with a single vision. We are preparing to unveil our signature catalog of events.</p>
         </motion.div>
       </section>
 
-      <section className="portfolio-gallery section">
+      {/* Under Curation Section */}
+      <section className="curation-banner-section section">
         <div className="container">
-          <motion.div className="filter-bar" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-            {categories.map(c => (
-              <button 
-                key={c} 
-                className={`filter-btn ${filter === c ? 'active' : ''}`}
-                onClick={() => setFilter(c)}
-              >
-                {c}
-              </button>
-            ))}
+          <motion.div className="curation-card" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
+            <span className="overline">Aesthetic Preview</span>
+            <h2>Curating Our Signature Catalog</h2>
+            <p className="curation-desc">
+              We are currently designing our digital gallery to showcase the weddings, corporate galas, and bespoke celebrations that define the Eden Standard.
+            </p>
+            <div className="curation-action">
+              <Link to="/contact" className="btn btn-primary">Inquire Now</Link>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Aesthetic Inspirations Grid */}
+      <section className="portfolio-gallery section" style={{ paddingTop: 0 }}>
+        <div className="container">
+          <motion.div className="section-title" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
+            <span className="overline">Design Vision</span>
+            <h3>The Eden Aesthetic</h3>
           </motion.div>
 
-          <motion.div layout className="gallery-masonry" initial="hidden" animate="visible" variants={stagger}>
+          <motion.div layout className="gallery-masonry" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
             <AnimatePresence>
-              {filteredProjects.map((p) => (
+              {inspirations.map((item) => (
                 <motion.div 
                   layout
-                  key={p.id}
+                  key={item.id}
                   className="gallery-item"
                   variants={fadeUp}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.4 }}
-                  onClick={() => setSelectedImg(p)}
+                  whileHover={{ y: -5 }}
+                  onClick={() => setSelectedImg(item)}
                 >
-                  <img src={p.img} alt={p.title} />
+                  <img src={item.img} alt={item.title} />
                   <div className="gallery-overlay">
                     <Search size={24} className="gallery-icon" />
                     <div className="gallery-info">
-                      <h4>{p.title}</h4>
-                      <p>{p.location} • {p.year}</p>
+                      <h4>{item.title}</h4>
+                      <p>{item.desc}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -109,7 +110,7 @@ export default function Portfolio() {
               <img src={selectedImg.img} alt={selectedImg.title} />
               <div className="lightbox-caption">
                 <h3>{selectedImg.title}</h3>
-                <p>{selectedImg.category} • {selectedImg.location} • {selectedImg.year}</p>
+                <p>{selectedImg.desc}</p>
               </div>
             </motion.div>
           </motion.div>

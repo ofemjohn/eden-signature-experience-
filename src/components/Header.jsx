@@ -16,9 +16,10 @@ export default function Header() {
   const links = [
     { to: '/', label: 'Home' },
     { to: '/about', label: 'About' },
-    { to: '/services', label: 'Services' },
+    { to: '/services', label: 'Events' },
     { to: '/portfolio', label: 'Portfolio' },
-    { to: '/contact', label: 'Enquire' },
+    { to: '/signature-service', label: 'Signature Service' },
+    { to: '/contact', label: 'Inquire' },
   ];
 
   return (
@@ -42,7 +43,7 @@ export default function Header() {
             ))}
             <li>
               <Link to="/contact" onClick={() => setMenuOpen(false)} className="nav-cta-btn">
-                Enquire
+                Inquire
               </Link>
             </li>
           </ul>

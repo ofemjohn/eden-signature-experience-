@@ -12,7 +12,7 @@ export default function ThankYou() {
         <img src={heroImg} alt="Thank You" className="ty-bg" />
         <div className="ty-overlay" />
         <motion.div className="ty-content" initial="hidden" animate="visible" variants={fadeUp}>
-          <p className="overline">Enquiry Received</p>
+          <p className="overline">Inquiry Received</p>
           <h1>Thank You</h1>
           <p className="ty-text">Your vision is in good hands. We have received your details and our team will be in touch shortly to discuss the next steps.</p>
           <div className="ty-ctas">

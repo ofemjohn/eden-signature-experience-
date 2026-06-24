@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
 
 :root {
-  --color-bg: #FAFAFA;
-  --color-text: #2C2C2C;
-  --color-accent: #C5A880; /* Soft gold/champagne */
-  --color-accent-dark: #A3865D;
-  --color-primary: #1A1A1A; /* Dark charcoal/navy */
-  --color-secondary: #E8E5E1; /* Warm light gray */
+  --color-bg: #FCFCFC;
+  --color-text: #2E2A2B;
+  --color-accent: #800020; /* Sophisticated Maroon / Burgundy */
+  --color-accent-dark: #5C061E; /* Deeper Maroon */
+  --color-primary: #4A0C16; /* Deep Maroon Black */
+  --color-secondary: #F7EFF1; /* Luxury maroon-tinted cream/white */
   --color-white: #FFFFFF;
   
   --font-heading: 'Cinzel', serif;

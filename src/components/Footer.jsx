@@ -26,16 +26,17 @@ export default function Footer() {
             <ul className="footer-links">
               <li><Link to="/">Home</Link></li>
               <li><Link to="/about">About Us</Link></li>
-              <li><Link to="/services">Services</Link></li>
+              <li><Link to="/services">Events</Link></li>
               <li><Link to="/portfolio">Portfolio</Link></li>
-              <li><Link to="/contact">Enquire</Link></li>
+              <li><Link to="/signature-service">Signature Service</Link></li>
+              <li><Link to="/contact">Inquire</Link></li>
             </ul>
           </div>
           <div className="footer-col">
             <h4 className="footer-heading">Connect</h4>
             <ul className="footer-links">
               <li><a href="mailto:info@edensignatureexperience.com" className="icon-link"><Mail size={14} /> info@edensignatureexperience.com</a></li>
-              <li><a href="tel:+1234567890" className="icon-link"><Phone size={14} /> +1 (234) 567-890</a></li>
+              <li><a href="tel:+16784359578" className="icon-link"><Phone size={14} /> +1 (678) 435-9578</a></li>
               <li><a href="https://instagram.com/edensignature.co" target="_blank" rel="noreferrer" className="icon-link"><InstagramIcon size={14} /> @edensignature.co</a></li>
             </ul>
             <div className="footer-socials">

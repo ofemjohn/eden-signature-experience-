@@ -46,7 +46,7 @@ export default function Contact() {
         <div className="container contact-grid">
           <motion.div className="contact-info" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
             <h2>Let's Craft An Unforgettable Experience Together</h2>
-            <p className="contact-intro">We take on a limited number of events each year to ensure our clients receive our undivided attention. Please fill out the form, and we will respond to all enquiries shortly.</p>
+            <p className="contact-intro">We take on a limited number of events each year to ensure our clients receive our undivided attention. Please fill out the form, and we will respond to all inquiries shortly.</p>
             
             <div className="contact-methods">
               <a href="mailto:info@edensignatureexperience.com" className="cm-item clickable-item">
@@ -56,11 +56,11 @@ export default function Contact() {
                   <span>info@edensignatureexperience.com</span>
                 </div>
               </a>
-              <a href="tel:+1234567890" className="cm-item clickable-item">
+              <a href="tel:+16784359578" className="cm-item clickable-item">
                 <Phone className="cm-icon" />
                 <div>
                   <strong>Phone</strong>
-                  <span>+1 (234) 567-890</span>
+                  <span>+1 (678) 435-9578</span>
                 </div>
               </a>
               <div className="cm-item">
@@ -73,7 +73,7 @@ export default function Contact() {
             </div>
 
             <div className="contact-whatsapp">
-              <a href="https://wa.me/1234567890" target="_blank" rel="noreferrer" className="btn btn-accent"><MessageSquare size={18} /> Chat on WhatsApp</a>
+              <a href="https://wa.me/16784359578" target="_blank" rel="noreferrer" className="btn btn-accent"><MessageSquare size={18} /> Chat on WhatsApp</a>
             </div>
 
             <div className="contact-socials">
@@ -145,7 +145,7 @@ export default function Contact() {
                 <label>Tell us about your vision *</label>
                 <textarea name="message" rows="5" required value={formData.message} onChange={handleChange} placeholder="Share as many details as you'd like..."></textarea>
               </div>
-              <button type="submit" className="btn btn-primary submit-btn">Submit Enquiry</button>
+              <button type="submit" className="btn btn-primary submit-btn">Submit Inquiry</button>
             </form>
           </motion.div>
         </div>
