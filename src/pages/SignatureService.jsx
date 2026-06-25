@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { Sparkles, GlassWater, Camera, Check } from 'lucide-react';
 import beverageImg from '../assets/images/signature-beverage.png';
 import photoboothImg from '../assets/images/signature-photobooth.png';
-import heroImg from '../assets/images/private-celebration.png';
 import './SignatureService.css';
 
 const fadeUp = { hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8 } } };
@@ -60,7 +59,7 @@ export default function SignatureService() {
     <div className="signature-service-page">
       {/* Hero Header */}
       <section className="page-hero">
-        <img src={heroImg} alt="Signature Service Background" className="page-hero-bg" />
+        <img src={beverageImg} alt="Signature Service Background" className="page-hero-bg" />
         <div className="page-hero-overlay" />
         <motion.div className="page-hero-content" initial="hidden" animate="visible" variants={fadeUp}>
           <p className="overline">Curated Add-Ons · Seamless Integration</p>
