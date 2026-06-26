@@ -62,8 +62,7 @@ export default function SignatureService() {
         <img src={beverageImg} alt="Signature Service Background" className="page-hero-bg" />
         <div className="page-hero-overlay" />
         <motion.div className="page-hero-content" initial="hidden" animate="visible" variants={fadeUp}>
-          <p className="overline">Curated Add-Ons · Seamless Integration</p>
-          <h1>Signature Service</h1>
+          <h1>Signature Services</h1>
           <p className="hero-sub-p">Looking for more than planning? Enhance your event with our signature guest experiences.</p>
         </motion.div>
       </section>
@@ -72,14 +71,12 @@ export default function SignatureService() {
       <section className="sig-intro section">
         <div className="container sig-intro-inner">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="sig-intro-content">
-            <span className="overline">Guest Experience</span>
-            <h2>Elevate your event with experiences guests won't stop talking about</h2>
             <p className="sig-lead-text">
               Thoughtfully curated services designed to engage your guests, create memorable moments, and leave a lasting impression — seamlessly woven into your event by our team.
             </p>
             <div className="sig-divider" />
             <p className="sig-body-text">
-              Our signature services aren't separate offerings — they're extensions of your planning experience. Every detail, from drink presentation to photo delivery, is coordinated by the same team managing your event.
+              Our signature services are standalone offerings designed to elevate any event. Every detail, from drink presentation to photo delivery, is handled with the same care and precision you'd expect from our team.
             </p>
           </motion.div>
         </div>

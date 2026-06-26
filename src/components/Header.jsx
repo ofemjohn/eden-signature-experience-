@@ -18,7 +18,7 @@ export default function Header() {
     { to: '/about', label: 'About' },
     { to: '/services', label: 'Events' },
     { to: '/portfolio', label: 'Portfolio' },
-    { to: '/signature-service', label: 'Signature Service' },
+    { to: '/signature-service', label: 'Signature Services' },
     { to: '/contact', label: 'Inquire' },
   ];
 
